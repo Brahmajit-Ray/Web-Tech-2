@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Year & Semester Subjects</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 10px;
+        }
+        ul li {
+            background: #007BFF;
+            color: white;
+            padding: 8px;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Select Year & Semester</h2>
+
+        <!-- Year Dropdown -->
+        <label for="year">Year:</label>
+        <select id="year" onchange="updateSubjects()">
+            <option value="1st">1st</option>
+            <option value="2nd">2nd</option>
+            <option value="3rd">3rd</option>
+            <option value="4th">4th</option>
+        </select>
+
+        <!-- Semester Dropdown -->
+        <label for="semester">Semester:</label>
+        <select id="semester" onchange="updateSubjects()">
+            <option value="1st">1st</option>
+            <option value="2nd">2nd</option>
+        </select>
+
+        <!-- Subject List -->
+        <h3>Subjects:</h3>
+        <ul id="subjectList"></ul>
+    </div>
+
+    <script>
+        const subjects = {
+            "1st": {
+                "1st": ["Mathematics I", "Physics", "Chemistry"],
+                "2nd": ["Mathematics II", "Electronics", "CPNM"]
+            },
+            "2nd": {
+                "1st": ["Data Structures", "COA", "OOP in C++"],
+                "2nd": ["Computer Networks", "DBMS", "OOP in Java"]
+            },
+            "3rd": {
+                "1st": ["Cloud Computing", "Operating Systems", "TOC-CD"],
+                "2nd": ["Multimedia", "Algorithms", "Information Security"]
+            },
+            "4th": {
+                "1st": ["Machine Learning", "Cloud Computing", "Artificial Intelligence"],
+                "2nd": ["Big Data", "Blockchain", "Internet of Things"]
+            }
+        };
+
+        function updateSubjects() {
+            let year = document.getElementById("year").value;
+            let semester = document.getElementById("semester").value;
+            let subjectList = document.getElementById("subjectList");
+
+            subjectList.innerHTML = "";
+
+            let selectedSubjects = subjects[year][semester];
+
+            selectedSubjects.forEach(subject => {
+                let li = document.createElement("li");
+                li.textContent = subject;
+                subjectList.appendChild(li);
+            });
+        }
+
+        window.onload = updateSubjects;
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>State & District Info</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+        #info {
+            margin-top: 10px;
+            padding: 10px;
+            background: #007BFF;
+            color: white;
+            border-radius: 5px;
+            display: none; /* Hidden initially */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Select State & District</h2>
+
+        <!-- State Dropdown -->
+        <label for="state">State:</label>
+        <select id="state" onchange="updateDistricts()">
+            <option value="" disabled selected>Select a state</option>
+            <option value="Maharashtra">Maharashtra</option>
+            <option value="Tamil Nadu">Tamil Nadu</option>
+            <option value="Karnataka">Karnataka</option>
+            <option value="Uttar Pradesh">Uttar Pradesh</option>
+            <option value="West Bengal">West Bengal</option>
+        </select>
+
+        <!-- District Dropdown (Initially Empty) -->
+        <label for="district">District:</label>
+        <select id="district" onchange="showDistrictInfo()">
+            <option value="" disabled selected>Select a district</option>
+        </select>
+
+        <!-- District Info (Initially Hidden) -->
+        <div id="info"></div>
+    </div>
+
+    <script>
+        // District data for each state
+        const districtsData = {
+            "Maharashtra": {
+                "Mumbai": "Mumbai is the financial capital of India, known for Bollywood.",
+                "Pune": "Pune is a major educational and IT hub in India.",
+                "Nagpur": "Nagpur is famous for oranges and the Zero Mile marker."
+            },
+            "Tamil Nadu": {
+                "Chennai": "Chennai is the capital of Tamil Nadu, known for its beaches and temples.",
+                "Coimbatore": "Coimbatore is known as the 'Manchester of South India'.",
+                "Madurai": "Madurai is famous for the Meenakshi Amman Temple."
+            },
+            "Karnataka": {
+                "Bangalore": "Bangalore is India's Silicon Valley and a major tech hub.",
+                "Mysore": "Mysore is famous for its palaces and Dasara festival.",
+                "Hubli": "Hubli is a commercial and transport hub in North Karnataka."
+            },
+            "Uttar Pradesh": {
+                "Lucknow": "Lucknow is known for its Nawabi culture and Tunday Kababs.",
+                "Varanasi": "Varanasi is the spiritual capital of India, situated on the banks of the Ganges.",
+                "Agra": "Agra is home to the Taj Mahal, one of the Seven Wonders of the World."
+            },
+            "West Bengal": {
+                "Kolkata": "Kolkata, the 'City of Joy', is known for its rich culture, literature, and sweets.",
+                "Darjeeling": "Darjeeling is famous for its tea gardens and breathtaking views of the Himalayas.",
+                "Howrah": "Howrah is home to the iconic Howrah Bridge and a major transport hub."
+            }
+        };
+
+        function updateDistricts() {
+            let state = document.getElementById("state").value;
+            let districtDropdown = document.getElementById("district");
+
+            // Clear previous district options
+            districtDropdown.innerHTML = '<option value="" disabled selected>Select a district</option>';
+
+            // Populate district dropdown
+            if (state in districtsData) {
+                for (let district in districtsData[state]) {
+                    let option = document.createElement("option");
+                    option.value = district;
+                    option.textContent = district;
+                    districtDropdown.appendChild(option);
+                }
+            }
+
+            // Hide district info when state is changed
+            document.getElementById("info").style.display = "none";
+        }
+
+        function showDistrictInfo() {
+            let state = document.getElementById("state").value;
+            let district = document.getElementById("district").value;
+            let infoBox = document.getElementById("info");
+
+            if (state && district) {
+                infoBox.textContent = districtsData[state][district];
+                infoBox.style.display = "block";
+            } else {
+                infoBox.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Atom Shape</title>
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width="300" height="300" ></canvas>
+    
+    <script>
+        const canvas = document.getElementById("canvas");
+        const ctx = canvas.getContext("2d");
+
+        function drawOrbit(angle) {
+            ctx.save();
+            ctx.translate(150, 150);
+            ctx.rotate(angle * Math.PI / 180);
+            ctx.beginPath();
+            ctx.ellipse(0, 0, 100, 30, 0, 0, 2 * Math.PI);
+            ctx.strokeStyle = "blue";
+            ctx.lineWidth = 2;
+            ctx.stroke();
+            ctx.restore();
+        }
+
+        // Draw 3 rotated ellipses
+        drawOrbit(0);
+        drawOrbit(60);
+        drawOrbit(120);
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Components Inventory</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h2>Computer Components Inventory</h2>
+    
+    <div class="button-container">
+        <button onclick="showDialog('add')">Add</button>
+        <button onclick="showItems()">Show</button>
+        <button onclick="showDialog('update')">Update</button>
+        <button onclick="showDialog('delete')">Delete</button>
+        <button onclick="addDefaultRows()">Add Default Data</button>
+    </div>
+
+    <div id="dialog">
+        <h3 id="dialog-title"></h3>
+        <label>Product ID:</label> <input type="text" id="product_id" disabled><br><br>
+        <label>Name:</label> <input type="text" id="name"><br><br>
+        <label>Manufacturer:</label> <input type="text" id="manufacturer"><br><br>
+        <label>Price:</label> <input type="number" id="price"><br><br>
+        <label>Category:</label> <input type="text" id="category"><br><br>
+        <button onclick="submitData()">Submit</button>
+        <button onclick="closeDialog()">Cancel</button>
+    </div>
+
+    <table id="data-table">
+        <tr>
+            <th>Product ID</th>
+            <th>Name</th>
+            <th>Manufacturer</th>
+            <th>Price</th>
+            <th>Category</th>
+        </tr>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+</html>

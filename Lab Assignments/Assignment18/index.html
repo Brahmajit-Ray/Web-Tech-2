@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Stock Prices</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #stocks {
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <h2> Live Stock Prices</h2>
+    <div id="stocks">
+        <p><strong>Stock A:</strong> $<span id="aapl">--</span></p>
+        <p><strong>Stock B:</strong> $<span id="googl">--</span></p>
+    </div>
+
+    <script>
+        // Create an EventSource to listen to the server
+        const eventSource = new EventSource("http://localhost:8080/Assignment18/stocks-sse");
+
+        eventSource.onmessage = function(event) {
+            const stockData = JSON.parse(event.data);
+            document.getElementById("aapl").innerText = stockData.AAPL.toFixed(2);
+            document.getElementById("googl").innerText = stockData.GOOGL.toFixed(2);
+        };
+
+        eventSource.onerror = function() {
+            console.log("SSE connection lost.");
+        };
+    </script>
+</body>
+</html>

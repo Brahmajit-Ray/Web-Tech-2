@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE question-paper SYSTEM "question.dtd">
+<question-paper>
+    <question no="1">
+        <text>Who holds the record for the most Formula 1 World Championships?</text>
+        <optionA>Lewis Hamilton</optionA>
+        <optionB>Michael Schumacher</optionB>
+        <optionC>Max Verstappen</optionC>
+        <optionD>Ayrton Senna</optionD>
+        <answer value="optionB">Michael Schumacher</answer>
+    </question>
+
+    <question no="2">
+        <text>Which F1 team has won the most Constructors' Championships?</text>
+        <optionA>Red Bull Racing</optionA>
+        <optionB>McLaren</optionB>
+        <optionC>Ferrari</optionC>
+        <optionD>Mercedes</optionD>
+        <answer value="optionC">Ferrari</answer>
+    </question>
+
+    <question no="3">
+        <text>What is the fastest F1 track in terms of average speed?</text>
+        <optionA>Monza</optionA>
+        <optionB>Silverstone</optionB>
+        <optionC>Spa-Francorchamps</optionC>
+        <optionD>Monaco</optionD>
+        <answer value="optionA">Monza</answer>
+    </question>
+
+    <question no="4">
+        <text>Which driver won the first ever Formula 1 World Championship in 1950?</text>
+        <optionA>Juan Manuel Fangio</optionA>
+        <optionB>Alberto Ascari</optionB>
+        <optionC>Giuseppe Farina</optionC>
+        <optionD>Stirling Moss</optionD>
+        <answer value="optionC">Giuseppe Farina</answer>
+    </question>
+
+    <question no="5">
+        <text>Which F1 Grand Prix is considered the "jewel in the crown" of the calendar?</text>
+        <optionA>Monza</optionA>
+        <optionB>Silverstone</optionB>
+        <optionC>Monaco</optionC>
+        <optionD>Suzuka</optionD>
+        <answer value="optionC">Monaco</answer>
+    </question>
+</question-paper>
