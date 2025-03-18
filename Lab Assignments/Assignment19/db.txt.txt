@@ -1,0 +1,11 @@
+CREATE TABLE students (
+    roll_number INT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    dept_name VARCHAR(50) NOT NULL
+);
+
+INSERT INTO students (roll_number, name, dept_name) VALUES
+(101, 'Virat Kohli', 'Computer Science'),
+(102, 'Rohit Sharma', 'Mechanical'),
+(103, 'Jasprit Bumrah', 'Computer Science'),
+(104, 'Shubman Gill', 'Electrical');
