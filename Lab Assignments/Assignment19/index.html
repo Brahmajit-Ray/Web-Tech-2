@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Search</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+        form { margin-bottom: 20px; }
+        button {
+            width: 60px;
+            padding: 10px;
+            background: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2><u>Student Search</u></h2>
+
+    <h3>Name Search</h3>
+
+    <!--  Form 1: Search by Name -->
+    <form action="SearchStudentServlet" method="GET">
+        <label>Enter Name:</label>
+        <input type="text" name="name" required>
+        <button type="submit">Search</button>
+    </form>
+
+    <h3>Department Search</h3>
+
+    <!--  Form 2: Select Department -->
+    <form action="DepartmentServlet" method="GET">
+        <label for="department">Select Department:</label>
+        <select id="department" name="department">
+            <option value="">--Select Department--</option>
+        </select>
+        <button type="submit">Search</button>
+    </form>
+
+    <script>
+        fetch('DepartmentListServlet')
+            .then(response => response.json())
+            .then(data => {
+                let departmentDropdown = document.getElementById('department');
+                data.forEach(dept => {
+                    let option = document.createElement('option');
+                    option.value = dept;
+                    option.textContent = dept;
+                    departmentDropdown.appendChild(option);
+                });
+            })
+        .catch(error => console.error('Error fetching departments:', error));
+    </script>
+</body>
+</html>
