@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer System Price Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Select Your Components</h2>
+        <form action="CalculatePrice.jsp" method="post">
+            <label for="hdd">HDD:</label>
+            <select name="hdd" id="hdd"></select>
+
+            <label for="motherboard">Motherboard:</label>
+            <select name="motherboard" id="motherboard"></select>
+
+            <label for="processor">Processor:</label>
+            <select name="processor" id="processor"></select>
+
+            <label for="ram">RAM:</label>
+            <select name="ram" id="ram"></select>
+
+            <label for="monitor">Monitor:</label>
+            <select name="monitor" id="monitor"></select>
+
+            <label for="cd">CD/DVD R/W:</label>
+            <select name="cd" id="cd"></select>
+
+            <button type="submit">Calculate Total Price</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+CREATE TABLE components (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    component_type VARCHAR(50) NOT NULL,
+    manufacturer VARCHAR(50) NOT NULL,
+    model VARCHAR(50) NOT NULL,
+    price DECIMAL(10,2) NOT NULL
+);
+
+
+INSERT INTO components (component_type, manufacturer, model, price) VALUES
+('HDD', 'Seagate', 'Barracuda 1TB', 4500),
+('HDD', 'Western Digital', 'WD Blue 1TB', 4200),
+('Motherboard', 'ASUS', 'ROG Strix B550', 14000),
+('Processor', 'Intel', 'Core i7 12700K', 35000),
+('RAM', 'Corsair', 'Vengeance 16GB', 6000),
+('Monitor', 'LG', 'UltraGear 24"', 15000),
+('CD/DVD R/W', 'LG', 'Super Multi DVD RW', 2500);
