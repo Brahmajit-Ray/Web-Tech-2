@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>State & District Selection</title>
+    <style>
+        body{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h2><u>Select State and District</u></h2>
+    
+    <label for="states">State:</label>
+    <select id="states" onchange="loadDistricts()">
+        <option value="">Select a state</option>
+    </select>
+
+    <label for="districts">District:</label>
+    <select id="districts" onchange="loadDistrictInfo()">
+        <option value="">Select a district</option>
+    </select>
+
+    <h3>District Information</h3>
+    <p id="districtInfo"></p>
+
+    <script>
+        window.onload = function() {
+            fetch('/Assignment23/GetStates')
+            .then(response => response.json())
+            .then(data => {
+                let stateDropdown = document.getElementById("states");
+                data.forEach(state => {
+                    let option = document.createElement("option");
+                    option.value = state.id;
+                    option.textContent = state.name;
+                    stateDropdown.appendChild(option);
+                });
+            });
+        };
+
+        function loadDistricts() {
+            let stateId = document.getElementById("states").value;
+            fetch(`/Assignment23/GetDistricts?state_id=${stateId}`)
+            .then(response => response.json())
+            .then(data => {
+                let districtDropdown = document.getElementById("districts");
+                districtDropdown.innerHTML = '<option value="">Select a district</option>';
+                data.forEach(district => {
+                    let option = document.createElement("option");
+                    option.value = district.id;
+                    option.textContent = district.name;
+                    districtDropdown.appendChild(option);
+                });
+            });
+        }
+
+        function loadDistrictInfo() {
+            let districtId = document.getElementById("districts").value;
+            fetch(`/Assignment23/GetDistrictInfo?district_id=${districtId}`)
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("districtInfo").textContent = `Population: ${data.population}, Area: ${data.area} sq.km, Description: ${data.description}`;
+            });
+        }
+    </script> 
+</body>
+</html>

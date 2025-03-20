@@ -1,0 +1,41 @@
+CREATE TABLE states (
+    state_id INT AUTO_INCREMENT PRIMARY KEY,
+    state_name VARCHAR(100) NOT NULL UNIQUE
+);
+
+INSERT INTO states (state_name) VALUES
+('West Bengal'), ('Maharashtra'), ('Tamil Nadu'), ('Karnataka');
+
+
+CREATE TABLE districts (
+    district_id INT AUTO_INCREMENT PRIMARY KEY,
+    district_name VARCHAR(100) NOT NULL,
+    state_id INT,
+    FOREIGN KEY (state_id) REFERENCES states(state_id) ON DELETE CASCADE
+);
+
+
+INSERT INTO districts (district_name, state_id) VALUES
+('Kolkata', 1), ('Howrah', 1),
+('Mumbai', 2), ('Pune', 2),
+('Chennai', 3), ('Coimbatore', 3),
+('Bangalore', 4), ('Mysore', 4);
+
+
+CREATE TABLE district_info (
+    district_id INT PRIMARY KEY,
+    population INT,
+    area_sq_km DECIMAL(10,2),
+    description TEXT,
+    FOREIGN KEY (district_id) REFERENCES districts(district_id) ON DELETE CASCADE
+);
+
+INSERT INTO district_info (district_id, population, area_sq_km, description) VALUES
+(1, 4486679, 185.00, 'Kolkata is the capital of West Bengal.'),
+(2, 1077075, 1467.00, 'Howrah is an important industrial city.'),
+(3, 12442373, 603.40, 'Mumbai is the financial capital of India.'),
+(4, 3115431, 331.26, 'Pune is known for its educational institutions.'),
+(5, 7090000, 426.00, 'Chennai is a major cultural and economic center.'),
+(6, 1600000, 246.00, 'Coimbatore is known for its textile industries.'),
+(7, 8443675, 709.00, 'Bangalore is India’s IT capital.'),
+(8, 920000, 152.00, 'Mysore is famous for its heritage structures.');
