@@ -1,11 +1,15 @@
-// Function to calculate factorial
-const factorial = (n) => (n === 0 || n === 1 ? 1 : n * factorial(n - 1));
+function factorial(n) {
+    if (n === 0 || n === 1) return 1;
+    return n * factorial(n - 1);
+}
 
-// Handle messages from main script
-self.onmessage = (event) => {
-    const number = event.data;
-    const results = Array.from({ length: number }, (_, i) => `${i + 1}! = ${factorial(i + 1)}`);
+self.onmessage = function(event) {
+    let num = parseInt(event.data);
+    let results = [];
 
-    // Send back results
-    self.postMessage(results);
-};
+    for (let i = 1; i <= num; i++) {
+        results.push({ number: i, factorial: factorial(i) });
+    }
+
+    setTimeout(()=>{self.postMessage(results)},600); 
+}
