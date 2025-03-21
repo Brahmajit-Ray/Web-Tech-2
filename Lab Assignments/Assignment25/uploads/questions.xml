@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE questions [
+    <!ELEMENT questions (question*)>
+    <!ELEMENT question (text, optionA, optionB, optionC, optionD, answer)>
+    <!ELEMENT text (#PCDATA)>
+    <!ELEMENT optionA (#PCDATA)>
+    <!ELEMENT optionB (#PCDATA)>
+    <!ELEMENT optionC (#PCDATA)>
+    <!ELEMENT optionD (#PCDATA)>
+    <!ELEMENT answer (#PCDATA)>
+]>
+<questions>
+    <question>
+        <text>Who is the highest run scorer in international cricket?</text>
+        <optionA>Virat Kohli</optionA>
+        <optionB>Sachin Tendulkar</optionB>
+        <optionC>Ricky Ponting</optionC>
+        <optionD>Jacques Kallis</optionD>
+        <answer>B</answer>
+    </question>
+
+    <question>
+        <text>Which team has won the most ICC Cricket World Cups?</text>
+        <optionA>India</optionA>
+        <optionB>Australia</optionB>
+        <optionC>West Indies</optionC>
+        <optionD>England</optionD>
+        <answer>B</answer>
+    </question>
+
+    <question>
+        <text>Who was the first bowler to take 600 Test wickets?</text>
+        <optionA>Shane Warne</optionA>
+        <optionB>Glenn McGrath</optionB>
+        <optionC>Muttiah Muralitharan</optionC>
+        <optionD>Anil Kumble</optionD>
+        <answer>A</answer>
+    </question>
+
+    <question>
+        <text>Who hit six sixes in an over in the 2007 T20 World Cup?</text>
+        <optionA>MS Dhoni</optionA>
+        <optionB>Yuvraj Singh</optionB>
+        <optionC>Chris Gayle</optionC>
+        <optionD>Adam Gilchrist</optionD>
+        <answer>B</answer>
+    </question>
+
+    <question>
+        <text>Which cricketer has the most international wickets across all formats?</text>
+        <optionA>Wasim Akram</optionA>
+        <optionB>Glenn McGrath</optionB>
+        <optionC>Muttiah Muralitharan</optionC>
+        <optionD>James Anderson</optionD>
+        <answer>C</answer>
+    </question>
+
+    <question>
+        <text>Who has won the most Formula 1 World Championships?</text>
+        <optionA>Lewis Hamilton</optionA>
+        <optionB>Michael Schumacher</optionB>
+        <optionC>Sebastian Vettel</optionC>
+        <optionD>Ayrton Senna</optionD>
+        <answer>A</answer>
+    </question>
+
+    <question>
+        <text>Which F1 team has won the most Constructors' Championships?</text>
+        <optionA>Mercedes</optionA>
+        <optionB>McLaren</optionB>
+        <optionC>Ferrari</optionC>
+        <optionD>Red Bull</optionD>
+        <answer>C</answer>
+    </question>
+
+    <question>
+        <text>Who won the first-ever Formula 1 World Championship in 1950?</text>
+        <optionA>Juan Manuel Fangio</optionA>
+        <optionB>Giuseppe Farina</optionB>
+        <optionC>Jim Clark</optionC>
+        <optionD>Jackie Stewart</optionD>
+        <answer>B</answer>
+    </question>
+
+    <question>
+        <text>Which driver won his first F1 title in 2021 after a dramatic finale in Abu Dhabi?</text>
+        <optionA>Charles Leclerc</optionA>
+        <optionB>Max Verstappen</optionB>
+        <optionC>Valtteri Bottas</optionC>
+        <optionD>Sergio Perez</optionD>
+        <answer>B</answer>
+    </question>
+
+    <question>
+        <text>Which Grand Prix is famously known as "The Jewel in the Crown" of F1?</text>
+        <optionA>British Grand Prix</optionA>
+        <optionB>Monaco Grand Prix</optionB>
+        <optionC>Italian Grand Prix</optionC>
+        <optionD>Singapore Grand Prix</optionD>
+        <answer>B</answer>
+    </question>
+</questions>
+
