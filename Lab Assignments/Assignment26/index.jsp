@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Quiz</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <h2>Online Quiz</h2>
@@ -47,7 +48,7 @@
                 if (conn != null) conn.close();
             }
         %>
-        <input type="submit" value="Submit Quiz">
+        <input type="submit" id="submit_button" value="Submit Quiz">
     </form>
 </body>
 </html>
