@@ -1,0 +1,10 @@
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    contact VARCHAR(15) NOT NULL
+);
+
+insert into users2 (username,password,email,name,contact) values ("User0","0000","test0@mail.com","User0 Kumar","0000000");

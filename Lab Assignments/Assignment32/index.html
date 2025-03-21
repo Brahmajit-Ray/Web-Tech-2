@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Create an Account</h2>
+        <form id="registerForm">
+            <label for="username"> Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="text" id="password" name="password" required>
+
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="text" id="confirmPassword" name="confirmPassword" required>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="contact">Contact Number:</label>
+            <input type="tel" id="contact" name="contact" required>
+
+            <button type="submit">Create Account</button>
+        </form>
+        <p>Already have an account? <a href="login.html">Login here</a></p>
+        <p id="errorMsg" class="error"></p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
