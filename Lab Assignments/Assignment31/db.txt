@@ -1,0 +1,30 @@
+-- Create a single table to store student marks with names
+CREATE TABLE marks (
+    roll_number INT NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    semester INT NOT NULL,
+    subject VARCHAR(50) NOT NULL,
+    marks_obtained INT NOT NULL,
+    total_marks INT NOT NULL DEFAULT 100,
+    PRIMARY KEY (roll_number, semester, subject)
+);
+
+INSERT INTO marks (roll_number, name, semester, subject, marks_obtained) VALUES 
+(101, 'Virat Kohli', 1, 'Physics', 85),
+(101, 'Virat Kohli', 1, 'Chemistry', 78),
+(101, 'Virat Kohli', 2, 'Physics', 82),
+(101, 'Virat Kohli', 2, 'Chemistry', 80),
+(101, 'Virat Kohli', 3, 'Physics', 88),
+(101, 'Virat Kohli', 3, 'Chemistry', 75),
+(101, 'Virat Kohli', 4, 'Physics', 90),
+(101, 'Virat Kohli', 4, 'Chemistry', 83);
+
+INSERT INTO student_marks (roll_number, name, semester, subject, marks_obtained) VALUES 
+(102, 'Rohit Sharma', 1, 'Physics', 75),
+(102, 'Rohit Sharma', 1, 'Chemistry', 70),
+(102, 'Rohit Sharma', 2, 'Physics', 78),
+(102, 'Rohit Sharma', 2, 'Chemistry', 72),
+(102, 'Rohit Sharma', 3, 'Physics', 80),
+(102, 'Rohit Sharma', 3, 'Chemistry', 74),
+(102, 'Rohit Sharma', 4, 'Physics', 85),
+(102, 'Rohit Sharma', 4, 'Chemistry', 77);
