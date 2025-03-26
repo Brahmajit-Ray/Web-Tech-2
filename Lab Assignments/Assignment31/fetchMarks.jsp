@@ -23,7 +23,7 @@ try {
     String password="0000";
     Connection conn = DriverManager.getConnection(url,username,password);
 
-    String query = "SELECT marks FROM marks WHERE roll_number = ? AND semester = ? AND subject = ?";
+    String query = "SELECT marks_obtained FROM marks WHERE roll_number = ? AND semester = ? AND subject = ?";
     PreparedStatement stmt = conn.prepareStatement(query);
     stmt.setInt(1, roll);
     stmt.setInt(2, sem);
@@ -32,7 +32,7 @@ try {
     ResultSet rs = stmt.executeQuery();
 
     if (rs.next()) {
-        out.println("Marks: " + rs.getInt("marks"));
+        out.println("Marks: " + rs.getInt("marks_obtained"));
     } else {
         out.println(" No record found.");
     }

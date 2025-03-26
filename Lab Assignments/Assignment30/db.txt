@@ -14,4 +14,4 @@ INSERT INTO components (component_type, manufacturer, model, price) VALUES
 ('Processor', 'Intel', 'Core i7 12700K', 35000),
 ('RAM', 'Corsair', 'Vengeance 16GB', 6000),
 ('Monitor', 'LG', 'UltraGear 24"', 15000),
-('CD/DVD R/W', 'LG', 'Super Multi DVD RW', 2500);
+('CD', 'LG', 'Super Multi DVD RW', 2500);

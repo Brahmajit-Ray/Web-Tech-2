@@ -4,5 +4,5 @@ CREATE TABLE customers (
     password VARCHAR(50) NOT NULL
 );
 
-INSERT INTO users (username, password) VALUES ('user1', 'password1');
-INSERT INTO users (username, password) VALUES ('user2', 'password2');
+INSERT INTO customers (username, password) VALUES ('user1', 'password1');
+INSERT INTO customers (username, password) VALUES ('user2', 'password2');
