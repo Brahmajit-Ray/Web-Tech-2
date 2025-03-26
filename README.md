@@ -44,3 +44,10 @@ apache-tomcat-9.0.90/
 |   ├── servlet-api.jar
     └── websocket-api.jar
 ```
+
+#### Add the following jar files to the lib directory of Tomcat to successfully run the files
+
+<ul>
+    <li><a href="https://mvnrepository.com/artifact/servlets.com/cos/05Nov2002">cos.jar</a></li>
+    <li><a href="https://mvnrepository.com/artifact/org.json/json/20250107">org.json</a></li>
+    <li><a href="https://mvnrepository.com/artifact/com.google.code.gson/gson/2.12.1">gson</a></li>

@@ -15,3 +15,6 @@ INSERT INTO components (component_type, manufacturer, model, price) VALUES
 ('RAM', 'Corsair', 'Vengeance 16GB', 6000),
 ('Monitor', 'LG', 'UltraGear 24"', 15000),
 ('CD', 'LG', 'Super Multi DVD RW', 2500);
+
+
+## Add the org.json package from the maven repository to successfully run this file

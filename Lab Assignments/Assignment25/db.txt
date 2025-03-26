@@ -7,3 +7,6 @@ CREATE TABLE questions (
     optionD VARCHAR(255),
     answer VARCHAR(255)
 );
+
+
+## Add the package cos.jar from the maven repository to properly run this file
