@@ -42,5 +42,5 @@ apache-tomcat-9.0.90/
 │   └── shutdown.bat
 ├── lib/
 |   ├── servlet-api.jar
-    └── webscoket-api.jar
+    └── websocket-api.jar
 ```
