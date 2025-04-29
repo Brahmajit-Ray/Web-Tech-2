@@ -24,16 +24,22 @@
             Class.forName("com.mysql.cj.jdbc.Driver");
             conn = DriverManager.getConnection(url, user, password);
 
+            String sql="SELECT COUNT(*) FROM questions";
+            stmt=conn.prepareStatement(sql);
+            rs=stmt.executeQuery();
+            if(rs.next()){
+                totalQuestions=rs.getInt(1);
+            }
+
             Enumeration<String> parameterNames = request.getParameterNames();
             while (parameterNames.hasMoreElements()) {
                 String paramName = parameterNames.nextElement();
                 if (paramName.startsWith("answer")) {
-                    totalQuestions++;
                     String userAnswer = request.getParameter(paramName);
                     int questionId = Integer.parseInt(paramName.replace("answer", ""));
 
                     // Check correct answer from database
-                    String sql = "SELECT answer FROM questions WHERE id = ?";
+                    sql = "SELECT answer FROM questions WHERE id = ?";
                     stmt = conn.prepareStatement(sql);
                     stmt.setInt(1, questionId);
                     rs = stmt.executeQuery();
