@@ -18,8 +18,8 @@
 <body>
     <h2> Live Stock Prices</h2>
     <div id="stocks">
-        <p><strong>Stock A:</strong> $<span id="aapl">--</span></p>
-        <p><strong>Stock B:</strong> $<span id="googl">--</span></p>
+        <p><strong>Stock A:</strong> ₹<span id="a">--</span></p>
+        <p><strong>Stock B:</strong> ₹<span id="b">--</span></p>
     </div>
 
     <script>
@@ -28,8 +28,8 @@
 
         eventSource.onmessage = function(event) {
             const stockData = JSON.parse(event.data);
-            document.getElementById("aapl").innerText = stockData.AAPL.toFixed(2);
-            document.getElementById("googl").innerText = stockData.GOOGL.toFixed(2);
+            document.getElementById("a").innerText = stockData.A.toFixed(2);
+            document.getElementById("b").innerText = stockData.B.toFixed(2);
         };
 
         eventSource.onerror = function() {

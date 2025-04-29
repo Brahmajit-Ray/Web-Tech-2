@@ -20,21 +20,36 @@ public class StockSSEServer extends HttpServlet {
         PrintWriter out = response.getWriter();
 
         while (true) {
-            double applePrice = 150 + (random.nextDouble() * 10);   // Random price
-            double googlePrice = 2700 + (random.nextDouble() * 50); // Random price
+            double aPrice = 150 + (random.nextDouble() * 10);   // Random price
+            double bPrice = 800 + (random.nextDouble() * 40); // Random price
 
-            String stockJson = String.format("{\"AAPL\": %.2f, \"GOOGL\": %.2f}", applePrice, googlePrice);
+            long lastAUpdate = System.currentTimeMillis();
+            long lastBUpdate = System.currentTimeMillis();
 
-            // Send data to the client
-            out.println("data: " + stockJson);
-            out.println(); // SSE requires a blank line
-            out.flush();
+            while (true) {
+                long currentTime = System.currentTimeMillis();
+                if (currentTime - lastAUpdate >= 1000) {
+                    aPrice = 150 + (random.nextDouble() * 10);
+                    lastAUpdate = currentTime;
+                }
 
-            try {
-                Thread.sleep(2000); // Send updates every 2 seconds
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-                break;
+                if (currentTime - lastBUpdate >= 3000) {
+                    bPrice = 800 + (random.nextDouble() * 40);
+                    lastBUpdate = currentTime;
+                }
+
+                String stockJson = String.format("{\"A\": %.2f, \"B\": %.2f}", aPrice, bPrice);
+
+                // Send SSE data
+                out.println("data: " + stockJson);
+                out.println(); // Blank line required for SSE
+                out.flush();
+
+                try {
+                    Thread.sleep(200);
+                } catch (InterruptedException e) {
+                    break; // Exit the loop if interrupted
+                }
             }
         }
     }
